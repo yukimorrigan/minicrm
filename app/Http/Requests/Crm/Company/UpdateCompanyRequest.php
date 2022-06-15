@@ -25,14 +25,14 @@ class UpdateCompanyRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_en'   => ['required', 'string', 'max:255', 'regex:/[a-zA-Z]+([ \-][a-zA-Z]+)*+/i'],
-            'name_ua'   => ['required', 'string', 'max:255', "regex:/[а-яА-ЯІіЇїҐґ']+([ \-][а-яА-ЯІіЇїҐґ']+)*/i"],
+            'name_en'   => ['required', 'string', 'max:255'],
+            'name_ua'   => ['required', 'string', 'max:255'],
             'email'     => ['required', 'string', 'max:255', 'email',
                 Rule::unique('companies', 'email')
                     ->ignore(request()->route()->parameters['company'])],
             'phone'     => ['required', 'string', 'min:7', 'max:12', 'regex:/\d+/'],
             'website'   => ['required', 'string', 'max:255', 'url'],
-            'logo'      => ['image', 'dimensions:min_width=100,min_height=100']
+            'logo'      => ['sometimes', 'image', 'dimensions:min_width=100,min_height=100', 'max:512']
         ];
     }
 

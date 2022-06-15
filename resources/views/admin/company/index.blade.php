@@ -9,7 +9,7 @@
     <x-table
         :table="'companies'"
         :entity="'company'"
-        :columns="['id', 'company_name', 'email', 'phone', 'website', 'edit', 'delete']"
+        :columns="['id', 'name', 'email', 'phone', 'website', 'edit', 'delete']"
     />
 
     @if (session('modal'))

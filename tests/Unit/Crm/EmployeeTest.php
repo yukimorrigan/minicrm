@@ -139,15 +139,6 @@ class EmployeeTest extends TestCase
                 ['first_name_en','first_name_ua','last_name_en','last_name_ua','email','phone','company_id'] // required fields
             ],
             [
-                [
-                    'first_name_en' => 'Українською',
-                    'last_name_en' => 'Українською',
-                    'first_name_ua' => 'In Ukrainian',
-                    'last_name_ua' => 'In Ukrainian'
-                ],
-                ['first_name_en','first_name_ua','last_name_en','last_name_ua'] // mixed up languages
-            ],
-            [
                 ['email' => '1'],
                 ['email']
             ],

@@ -69,6 +69,7 @@
                                     "sZeroRecords": "@lang('admin.empty_search')",
                                     "search": "@lang('admin.search')",
                                     "lengthMenu": "@lang('admin.entries_count')",
+                                    "infoFiltered":   "@lang('admin.filtered')",
                                 }
                             });
                         });

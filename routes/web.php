@@ -16,12 +16,15 @@ use App\Http\Controllers\Crm\EmployeeController;
 |
 */
 
-Route::group(['prefix' => LocalizationService::getLangPrefix()], function () {
+Route::group([
+    'prefix' => LocalizationService::getLangPrefix(),
+    'middleware' => ['auth', 'verified', 'set_language']
+], function () {
     Route::get('/', function () {
         return redirect()->route('register');
     });
-    Route::get('/companies/page','\App\Http\Controllers\Crm\CompanyController@page')->name('companies.page');
-    Route::get('/employees/page','\App\Http\Controllers\Crm\EmployeeController@page')->name('employees.page');
+    Route::get('/companies/page',[CompanyController::class, 'page'])->name('companies.page');
+    Route::get('/employees/page',[EmployeeController::class, 'page'])->name('employees.page');
     Route::resources([
         'companies' => CompanyController::class,
         'employees' => EmployeeController::class

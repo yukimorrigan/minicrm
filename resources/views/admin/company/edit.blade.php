@@ -3,13 +3,13 @@
     <x-slot name="prev">{{route('companies.index')}}</x-slot>
     <x-slot name="prevHeader">{{__('Companies')}}</x-slot>
     <x-slot name="header">
-        @lang('admin.edit') @lang('admin.company_genitive')
+        @lang('admin.'.$action) @lang('admin.company_genitive')
     </x-slot>
 
-    <x-form :action="route('companies.update', ['company' => $id])"
-            :method="'put'"
+    <x-form :action="$route"
+            :method="$method"
             :controls="$controls"
-            :btnText="__('admin.edit')"/>
+            :btnText="__('admin.'.$action)"/>
 
     @if (session('modal'))
         {{session('modal')->render()}}

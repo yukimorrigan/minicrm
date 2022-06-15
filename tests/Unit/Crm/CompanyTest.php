@@ -95,13 +95,6 @@ class CompanyTest extends TestCase
                 ['name_en','name_ua','email','phone','website'] // required fields
             ],
             [
-                [
-                    'name_en' => 'Українською',
-                    'name_ua' => 'In Ukrainian'
-                ],
-                ['name_en','name_ua'] // mixed up languages
-            ],
-            [
                 ['email' => '1'],
                 ['email']
             ],

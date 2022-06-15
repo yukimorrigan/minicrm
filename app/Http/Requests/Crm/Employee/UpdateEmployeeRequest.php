@@ -25,15 +25,15 @@ class UpdateEmployeeRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name_en'   => ['required', 'string', 'max:255', 'regex:/[a-zA-Z]+([ \-][a-zA-Z]+)*+/i'],
-            'first_name_ua'   => ['required', 'string', 'max:255', "regex:/[а-яА-ЯІіЇїҐґ']+([ \-][а-яА-ЯІіЇїҐґ']+)*/i"],
-            'last_name_en'    => ['required', 'string', 'max:255', 'regex:/[a-zA-Z]+([ \-][a-zA-Z]+)*+/i'],
-            'last_name_ua'    => ['required', 'string', 'max:255', "regex:/[а-яА-ЯІіЇїҐґ']+([ \-][а-яА-ЯІіЇїҐґ']+)*/i"],
+            'first_name_en'   => ['required', 'string', 'max:255'],
+            'first_name_ua'   => ['required', 'string', 'max:255'],
+            'last_name_en'    => ['required', 'string', 'max:255'],
+            'last_name_ua'    => ['required', 'string', 'max:255'],
             'email'           => ['required', 'string', 'max:255', 'email',
                 Rule::unique('employees', 'email')
                     ->ignore(request()->route()->parameters['employee'])],
             'phone'           => ['required', 'string', 'min:7', 'max:12', 'regex:/\d+/'],
-            'company_id'      => ['required', 'integer']
+            'company_id'      => ['required', 'integer', 'exists:companies,id']
         ];
     }
 

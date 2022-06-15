@@ -20,10 +20,14 @@ class EmployeeFactory extends Factory
     {
         $uaFaker = Faker::create('uk_UA');
         return [
-            'first_name_en' => $this->faker->unique()->firstName(),
-            'first_name_ua' => $uaFaker->unique()->firstName(),
-            'last_name_en' => $this->faker->unique()->lastName(),
-            'last_name_ua' => $uaFaker->unique()->lastName(),
+            'first_name' => [
+                'en' => $this->faker->unique()->firstName(),
+                'ua' => $uaFaker->unique()->firstName(),
+            ],
+            'last_name' => [
+                'en' => $this->faker->unique()->lastName(),
+                'ua' => $uaFaker->unique()->lastName(),
+            ],
             'email' => $this->faker->unique()->safeEmail(),
             'phone' => $uaFaker->unique()->phoneNumber(),
             'company_id' => Company::all()->pluck('id')->random()

@@ -84,7 +84,7 @@ return [
     'mac_address' => 'The :attribute must be a valid MAC address.',
     'max' => [
         'array' => 'The :attribute must not have more than :max items.',
-        'file' => 'The :attribute must not be greater than :max kilobytes.',
+        'file' => ':attribute повинен бути не більше ніж :max кілобайтів.',
         'numeric' => 'The :attribute must not be greater than :max.',
         'string' => 'Поле ":attribute" повинне складати не більше ніж :max символів.',
     ],

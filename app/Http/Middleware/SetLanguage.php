@@ -19,6 +19,8 @@ class SetLanguage
     {
         if ($prefix = ltrim($request->route()->getPrefix(), '/'))
         {
+            if (!in_array($prefix, config('app.locales')))
+                $prefix = config('app.fallback_locale');
             App::setLocale($prefix);
         }
         return $next($request);

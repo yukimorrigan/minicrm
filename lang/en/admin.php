@@ -15,6 +15,7 @@ return [
     'search' => 'Search',
     'entries_count' => 'Show _MENU_ entries',
     'empty_search' => 'No matching records found',
+    "filtered" =>   "(filtered from _MAX_ total entries)",
     'add' => 'Add',
     'edit' => 'Edit',
     'delete' => 'Delete',
