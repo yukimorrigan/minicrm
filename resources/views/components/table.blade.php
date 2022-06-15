@@ -44,6 +44,11 @@
                                 let col = {"data": columns[i]};
                                 if (columns[i] === 'edit' || columns[i] === 'delete')
                                     col['orderable'] = false;
+                                else if (columns[i] === 'website') {
+                                    col['fnCreatedCell'] = function (nTd, sData, oData, iRow, iCol) {
+                                        $(nTd).html("<a href='"+oData.website+"'>"+oData.website+"</a>");
+                                    }
+                                }
                                 dataColumns.push(col);
                             }
                             $('#table').DataTable({

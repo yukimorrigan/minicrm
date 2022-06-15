@@ -63,7 +63,7 @@ class CompanyController extends Controller
                 "name"          => $record['name'],
                 "email"         => $record['email'],
                 "phone"         => $record['phone'],
-                "website"       => '<a href="'.$record['website'].'" target="_blank">'.$record['website'].'</a>',
+                "website"       => $record['website'],
                 "edit"          => $editButton->render()->render(),
                 "delete"        => $deleteButton->render()->render()
             ];
